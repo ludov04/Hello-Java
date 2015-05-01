@@ -8,5 +8,4 @@ echo "root:$PASSWD" | chpasswd
 #Spawn dropbear
 dropbear -E -F
 
-javac Hello.java
-java -cp . Hello
+sbt update compile run
