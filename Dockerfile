@@ -1,12 +1,14 @@
 FROM resin/rpi-raspbian:jessie
 
 
-RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
-
 # Install OpenJDK 7 & SBT
-RUN apt-get update && apt-get install -y openjdk-7-jdk dropbear sbt && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y oracle-java7-jdk dropbear && rm -rf /var/lib/apt/lists/*
 
-RUN sbt update
+RUN wget http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.1-RC5/sbt.deb
+
+RUN dpkg -i sbt.deb
+
+RUN sbt update -mem 128
 
 ADD . /App/
 RUN mv /App/run.sh /run.sh
