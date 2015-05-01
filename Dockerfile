@@ -2,7 +2,7 @@ FROM resin/rpi-raspbian:jessie
 
 
 # Install OpenJDK 7 & SBT
-RUN apt-get update && apt-get install -y oracle-java7-jdk dropbear && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y openjdk-7-jdk dropbear && rm -rf /var/lib/apt/lists/*
 
 RUN wget http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.1-RC5/sbt.deb
 
