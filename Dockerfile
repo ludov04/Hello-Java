@@ -13,4 +13,5 @@ RUN pip install picamera
 ADD . /App/
 RUN mv /App/run.sh /run.sh
 
-CMD modprobe bcm2835-v4l2 ["bash", "run.sh"]
+CMD modprobe bcm2835-v4l2
+CMD ["bash", "run.sh"]
