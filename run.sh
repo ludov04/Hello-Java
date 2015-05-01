@@ -8,4 +8,5 @@ echo "root:$PASSWD" | chpasswd
 #Spawn dropbear
 dropbear -E -F
 
-sbt update compile run
+
+python /App/picam/serv.py
