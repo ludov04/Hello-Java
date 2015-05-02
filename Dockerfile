@@ -12,6 +12,7 @@ RUN pip install picamera
 
 ADD . /App/
 RUN mv /App/run.sh /run.sh
+RUN dpkg -i /App/lib/python-qrtools_1.2_all-2.deb
 
 CMD modprobe bcm2835-v4l2
 CMD dropbear -E -F
